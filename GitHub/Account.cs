@@ -60,10 +60,11 @@ namespace GitHub
                 }
             }
         }
-        public Account(string name,string password)
+        public Account(string Name,string Password)
         {
-            this.name = name;
-            this.password = password;
+            
+            this.name = Name;
+            this.password = Password;
         }
 
         public void Info()
@@ -73,10 +74,10 @@ namespace GitHub
             Console.WriteLine(" 1. New Name");
             Console.WriteLine(" 2. New Password");
             Console.WriteLine("       --InfoAccount--");
-            Console.WriteLine("");
-            Console.WriteLine($"  Name: {Name}");
-            Console.WriteLine($"  Password {Password}");
-            Console.WriteLine($"  Projects: {Projects.Count}");
+            Console.WriteLine($"  Имя: {Name}");
+            Console.WriteLine($"  Пароль: {Password}");
+            Console.WriteLine($"  Количество Проектов: {Projects.Count}");
+            Console.WriteLine($"  ID: {GetHashCode()}");
             
             ConsoleKey key = Console.ReadKey().Key;
             Console.Clear();
@@ -86,7 +87,6 @@ namespace GitHub
                 case ConsoleKey.D2: Console.Write("Введите Новый Пароль:"); Password = Console.ReadLine(); break;
             }
         }
-
 
         public void DelProject()
         {

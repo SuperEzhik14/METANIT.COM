@@ -1,4 +1,5 @@
-﻿using System;
+﻿global using ClassLibrary4;
+using System;
 using System.Threading.Channels;
 namespace ConsoleAppPractick
 {
