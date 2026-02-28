@@ -91,23 +91,21 @@ namespace GitHub
         public void DelProject()
         {
             int Count = Projects.Count;
-
+            bool? oper = null;
             for (int i = 0; i < Count; i++)
             {
-                Project pro = Projects.Dequeue();
-                if (pro.Name == Project.Name)
+                Project pro = Projects.Dequeue(); 
+                if (pro.Name == Project.Name && pro != null)
                 {
-                    if (Projects.Count > 0)
-                    {
-                        Project = Projects.Peek();
-                    }
-                    else
-                    {
-                        Project = null;
-                    }
-                     continue;
+                    oper = true;
+                    continue;
                 }
                 Projects.Enqueue(pro);
+            }
+
+            if (oper == true)
+            {
+                SwapProject();
             }
         }
         public void AddProject()
@@ -168,6 +166,10 @@ namespace GitHub
                 Project = Projects.Peek();
                 Projects.Dequeue();
                 Projects.Enqueue(Project);
+            }
+            else
+            {
+                Project = null;
             }
         }
     }

@@ -92,6 +92,7 @@ namespace GitHub
                 {
                     str += name[i];
                 }
+                name = str;
             }
             Account = new Account(name, Generic.Password(name));
             Console.WriteLine($"Вы Успешно Зарегистрировались, Добро Пожаловать в GitHub");
@@ -99,6 +100,7 @@ namespace GitHub
             Console.WriteLine($"\tИмя:    {Account.Name}");
             Console.WriteLine($"\tПароль: {Account.Password}");
             Console.WriteLine($"\tID:     {Account.GetHashCode()}");
+            Console.ReadKey();
         }
         private void Registr()
         {
@@ -107,30 +109,26 @@ namespace GitHub
             string name;
             while (true)
             {
+                Console.WriteLine("Имя Должно Иметь 4-12 символов");
                 Console.Write($"\tИмя: ");
                 name = Console.ReadLine();
                 if (name.Length <= 12 && name.Length >= 4)
                 {
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("Имя Должно Иметь 4-12 символов");
-                }
+                
             }
             string pass;
             while (true)
             {
+                Console.WriteLine("Пароль Должен Иметь 10-20 символов");
                 Console.Write($"\tПароль: ");
                 pass = Console.ReadLine();
                 if (pass.Length >= 10 && pass.Length <= 20)
                 {
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("Пароль Должен Иметь 10-20 символов");
-                }
+                
             }
             Account = new Account(name,pass);
             Console.Clear();
@@ -139,6 +137,7 @@ namespace GitHub
             Console.WriteLine($"\tИмя:    {Account.Name}");
             Console.WriteLine($"\tПароль: {Account.Password}");
             Console.WriteLine($"\tID:     {Account.GetHashCode()}");
+            Console.ReadKey();
         }
     }
 }
