@@ -178,7 +178,9 @@ namespace ConsoleAppPractick
         {
             Person person = new Person("maxim");
             Person person2 = new Person("Maxim");
-            Messenger<Message, Person> telegram = new Messenger<Message, Person>("telegram");
+            Messenger<EmailMessage, Person> telegram = new Messenger<EmailMessage, Person>("Whatzap");
+            
+            
             telegram.GetAccount(person);
             Thread.Sleep(500);
             telegram.PrintWindowMessenger();
